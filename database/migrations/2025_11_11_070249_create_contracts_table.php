@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('contracts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->enum('account_type', ['master', 'user']);
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('name') -> unique();
+            $table->foreignId('company_id')->constrained('companies');
+            $table->integer('year'); 
+            $table->enum('pole_size', ['9 meter', '12 meter']);
+            $table->integer('stock');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('contracts');
     }
 };
