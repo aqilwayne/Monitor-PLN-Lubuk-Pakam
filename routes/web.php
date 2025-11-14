@@ -27,9 +27,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/company', [App\Http\Controllers\CompanyController::class, 'index'])->name('company.index');
     Route::get('/company/create', [App\Http\Controllers\CompanyController::class, 'create'])->name('company.create');
     Route::post('/company', [App\Http\Controllers\CompanyController::class, 'store'])->name('company.store');
-    Route::get('/contract', function () {
-        return view('pages.contract');
-    });
+
+    Route::get('/contract', [App\Http\Controllers\ContractController::class, 'index'])->name('contract.index');
+    Route::get('/contract/create', [App\Http\Controllers\ContractController::class, 'create'])->name('contract.create');
+    Route::post('/contract', [App\Http\Controllers\ContractController::class, 'store'])->name('contract.store');
     Route::get('/log', function () {
         return view('pages.log');
     });

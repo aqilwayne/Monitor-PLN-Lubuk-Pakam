@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contract extends Model
 {
-    protected $fillable = ['name', 'year', 'pole_size', 'stock'];
+    protected $fillable = ['name', 'company_id', 'year', 'pole_size', 'stock'];
+
+    use HasFactory;
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }

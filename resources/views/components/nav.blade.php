@@ -9,7 +9,7 @@
     <a href="{{ url('/contract') }}" class="nav-link text-dark">Daftar Kontrak</a>
   </li>
   <li class="nav-item">
-    <a href="{{ url('/map') }}" class="nav-link text-dark">Manajemen Peta</a>
+    <a href="{{ url('/map') }}" class="nav-link text-dark">Rekap Permintaan Tiang</a>
   </li>
   <li class="nav-item">
     <a href="{{ url('/log') }}" class="nav-link text-dark">Log</a>
